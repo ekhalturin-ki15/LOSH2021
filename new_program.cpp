@@ -38,10 +38,11 @@ int main()
         
     }
 
-    vector <vector < vector< char > >  > vvv(N, vector< char>(M));
+    vector <vector < vector< char > >  > vvv(N, vector < vector< char >>(M, vector< char > (D)));
 
 
     //char v_old[N][M][D][N][M]; N*M..
+
 
 
 
