@@ -4,9 +4,69 @@
 #include <vector>
 #include <memory> 
 
+//#include <functional>
+
 #include <list>
 
 using namespace std;
+
+
+bool is_min(int a, int b)
+{
+    return (a > b);
+}
+
+vector<int> my_sort(vector<int> v)
+{
+
+    // -----------------
+    // 9 1 2 8 3 7 8 4 5
+    // |
+    //   - - 
+
+    int i, j;
+    for (i = 0; i < v.size(); ++i)
+    {
+        for (j = i + 1; j < v.size(); ++j)
+        {
+            if (is_min(v[i] , v[j])) swap(v[i], v[j]);
+        }
+    }
+
+    return v;
+}
+
+
+
+
+int my_min(vector<int> v)
+{
+    v = my_sort(v);
+
+    for (int i = 0; i < v.size(); ++i)
+    {
+        cout << v[i] << " ";
+    }
+
+
+    return v[v.size()/2];
+}
+
+
+
+void sum_vector(vector<int>& v, vector<int> b)
+{
+
+    int n = v.size();
+    v.resize(v.size() + b.size());
+
+    for (int i = n; i < v.size(); ++i)
+    {
+        v[i] = b[i - n];
+    }
+
+}
+
 
 int main( )
 {
@@ -14,32 +74,55 @@ int main( )
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-
-    vector<char> v(10);
-
-    v[0] = 1;
-    v[1] = 1;
-    v[2] = 2;
-    v[3] = 3;
-    v[4] = 5;
-    v[5] = 8;
-
-    vector<int> fib{ 1, 1 , 2, 3, 5, 8, 13, 21 };
-
-    cout << fib.back();
-
-    vector<int> fib2{ 1, 1 , 2, 3, 5, 8, 13, 21 };
-
-    //fib.insert(fib.end(), fib2.begin(), fib2.end());
-
-    string s = "Hello";
-    string ss{ ' ', 'W', 'o', 'r', 'l', '8', '1', '2' };
-
-    ss.resize(100);
+    //bin(15);
 
 
-    //--------------->
-    //0123232390279845
+    int a;
 
-    return 0;
+    vector< vector <int>> vv;
+
+
+    while (true)
+    {
+
+        vector<int> v;
+
+        while (true)
+        {
+            cin >> a;
+            if (a < 0) break;
+                
+             v.push_back(a);
+
+        }
+
+        vv.push_back(v);
+
+        if (a == -2) break;
+
+
+    }
+
+    vector<int> sum_v;
+
+
+    for (int i = 0; i < vv.size(); ++i)
+    {
+
+        sum_vector(sum_v, vv[i]);
+    }
+
+
+    for (int i = 0; i < sum_v.size(); ++i)
+    {
+        int& it = sum_v[i];
+
+        cout << it << " ";
+    }
+
+
+    // for (auto it : sum_v) cout << it << " ";
+
+
+
 }
