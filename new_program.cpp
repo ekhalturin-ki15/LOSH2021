@@ -8,52 +8,38 @@
 
 using namespace std;
 
-int main()
+int main( )
 {
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
 
-    const int N = 10, M = 20, D =20;
+    vector<char> v(10);
+
+    v[0] = 1;
+    v[1] = 1;
+    v[2] = 2;
+    v[3] = 3;
+    v[4] = 5;
+    v[5] = 8;
+
+    vector<int> fib{ 1, 1 , 2, 3, 5, 8, 13, 21 };
+
+    cout << fib.back();
+
+    vector<int> fib2{ 1, 1 , 2, 3, 5, 8, 13, 21 };
+
+    //fib.insert(fib.end(), fib2.begin(), fib2.end());
+
+    string s = "Hello";
+    string ss{ ' ', 'W', 'o', 'r', 'l', '8', '1', '2' };
+
+    ss.resize(100);
 
 
-    char v_old[N]; // N
-    vector< char > vvv_new(N);
+    //--------------->
+    //0123232390279845
 
-
-
-    
-    char vv_old[N][M]; // N*M
-    vector< vector< char> > v_new(N, vector< char>(M));
-
-    vector< vector< char>  > vv_new(N);
-
-
-
-
-    for (int i = 0; i < N; ++i)
-    {
-        vv_new[i].resize( i + 1 );
-        
-    }
-
-    vector <vector < vector< char > >  > vvv(N, vector < vector< char >>(M, vector< char > (D)));
-
-
-    //char v_old[N][M][D][N][M]; N*M..
-
-
-
-
-
-    v_new.resize(N);
-
-
-
-
-
-
-
-
+    return 0;
 }
