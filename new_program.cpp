@@ -18,26 +18,16 @@ bool is_min(int a, int b)
 
 vector<int> my_sort(vector<int> v)
 {
-
-    // -----------------
-    // 9 1 2 8 3 7 8 4 5
-    // |
-    //   - - 
-
     int i, j;
     for (i = 0; i < v.size(); ++i)
     {
         for (j = i + 1; j < v.size(); ++j)
         {
-            if (is_min(v[i] , v[j])) swap(v[i], v[j]);
+            if (is_min(v[i], v[j])) swap(v[i], v[j]);
         }
     }
-
     return v;
 }
-
-
-
 
 int my_min(vector<int> v)
 {
@@ -49,7 +39,7 @@ int my_min(vector<int> v)
     }
 
 
-    return v[v.size()/2];
+    return v[v.size() / 2];
 }
 
 
@@ -68,60 +58,64 @@ void sum_vector(vector<int>& v, vector<int> b)
 }
 
 
-int main( )
+
+
+void di(vector< vector <int>> vv, int step, int shift)
+{
+
+    if (step < vv.size())
+        if (step + shift < vv[step].size())
+            cout << vv[step][step + shift] << " ";
+}
+
+
+
+int main()
 {
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    //bin(15);
-
-
-    int a;
+    vector<int> q{ 1, 4, 5 };
 
     vector< vector <int>> vv;
 
-
+    int a;
     while (true)
     {
-
-        vector<int> v;
+        vector <int> v;
 
         while (true)
         {
             cin >> a;
-            if (a < 0) break;
-                
-             v.push_back(a);
+
+            if (a <= -10) break;
+
+            v.push_back(a);
 
         }
 
         vv.push_back(v);
 
-        if (a == -2) break;
-
-
+        if (a <= -20) break;
     }
 
-    vector<int> sum_v;
 
 
-    for (int i = 0; i < vv.size(); ++i)
+    for (int j = 0; j < vv[0].size(); ++j)
     {
+        for (int i = 0; i < min(vv.size(), vv[0].size()); ++i)
+        {
 
-        sum_vector(sum_v, vv[i]);
+            di(vv, i, j); // cout<<vv[i][i];
+
+        }
+
+
+        cout << "\n";
     }
 
 
-    for (int i = 0; i < sum_v.size(); ++i)
-    {
-        int& it = sum_v[i];
-
-        cout << it << " ";
-    }
-
-
-    // for (auto it : sum_v) cout << it << " ";
 
 
 
