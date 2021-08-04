@@ -4,6 +4,8 @@
 #include <vector>
 #include <memory> 
 
+#include <list>
+
 using namespace std;
 
 int main()
@@ -12,44 +14,43 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    //
 
-    int n;
+    const int N = 10, M = 20, D =20;
 
-    cin >> n; // 39
 
-    vector< double > dd(n + n);
+    char v_old[N]; // N
+    vector< char > vvv_new(N);
 
-    for (int i = 0; i < dd.size()   ; ++i)
+
+
+    
+    char vv_old[N][M]; // N*M
+    vector< vector< char> > v_new(N, vector< char>(M));
+
+    vector< vector< char>  > vv_new(N);
+
+
+
+
+    for (int i = 0; i < N; ++i)
     {
-        dd[i] = log(i); // log2
-
-        //2^10101  log3(3^10101) = 10101
-
+        vv_new[i].resize( i + 1 );
+        
     }
 
-
-    dd.push_back(3289547);
-
-    dd.pop_back();
-
-    int back1 = dd[ dd.size() - 1 ];
+    vector <vector < vector< char > >  > vvv(N, vector< char>(M));
 
 
-    int back2 = dd.back();
-
-   
-
-    cout << back1 << " " << back2;
-
-
-    int i = 0;
+    //char v_old[N][M][D][N][M]; N*M..
 
 
 
-    //vector<int> v;
 
-    //while (i < )
+    v_new.resize(N);
+
+
+
+
 
 
 
