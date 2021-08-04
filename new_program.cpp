@@ -1,72 +1,57 @@
 ﻿#include <iostream> // cin cout
 #include <stdio.h>
 #include <algorithm>
+#include <vector>
+#include <memory> 
 
 using namespace std;
 
 int main()
 {
+
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    int w, h;
-
-    cin >> w >> h;
-
-    char ch;
-
-    //Считываем лабиринт
-    for (int y = 0; y < h; ++y)
-    {
-        for (int x = 0; x < w; ++x)
-        {
-            cin >> ch;
-
-            if (ch == '0') cout << '.';
-            else cout << '#';
-        }
-
-        cout << "\n";
-    }
+    //
 
     int n;
 
-    cin >> n;
+    cin >> n; // 39
 
+    vector< double > dd(n + n);
 
-    int a[14];// a[0] a[1] ... a[13]
-
-
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < dd.size()   ; ++i)
     {
-        cin >> a[i];
-    }
+        dd[i] = log(i); // log2
 
-    //[0 13]
-    int rand;
+        //2^10101  log3(3^10101) = 10101
 
-    std::srand(std::time(0) );
-    rand = std::rand();
-
-    // 0 2^32
-    //[0 13] n
-
-    rand %= n;
-
-    cout << a[rand];
-
-
-    int step = 0;
-    while (step < n)
-    {
-        //...//
     }
 
 
-    step = 0;
-    do
-    {
-        //...//
-    } while (step < n);
+    dd.push_back(3289547);
+
+    dd.pop_back();
+
+    int back1 = dd[ dd.size() - 1 ];
+
+
+    int back2 = dd.back();
+
+   
+
+    cout << back1 << " " << back2;
+
+
+    int i = 0;
+
+
+
+    //vector<int> v;
+
+    //while (i < )
+
+
+
 
 }
