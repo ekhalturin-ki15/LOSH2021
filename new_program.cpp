@@ -28,33 +28,40 @@ int sum_dig(int a)
 }
 
 
-VI v;
 
-void rect(int step, int step_finish)
+bool rect(int step, int step_finish, vector<int>& v, int& all_row)
 {
+
+
+
     if (step == step_finish)
     {
+        if (all_row <= 0)  return false;
+        --all_row;
+
+
         for (int i = 0; i < v.size(); ++i)
         {
             cout << v[i];
         }
 
+        if (all_row <= 0)  return false;
+
         cout << "\n";
-        return;
+        
+        
+        return true;
     }
 
 
     v[step] = 0;
-    rect(step + 1, step_finish);
+    if (!rect(step + 1, step_finish, v, all_row)) return false;
+
 
     v[step] = 1;
-    rect(step + 1, step_finish);
+    if (!rect(step + 1, step_finish, v, all_row)) return false;
 
-    v[step] = 2;
-    rect(step + 1, step_finish);
-
-
-    return;
+    return true;
 }
 
 
@@ -95,37 +102,48 @@ int main()
     // O(3^n)
 
 
-    int n, m, a;
+    int n, m, a, all_row;
 
-    cin >> n;
+    cin >> n >> all_row;
 
     vector<int> v(n);
+    //rect(0, n , v, all_row);
 
-    v.resize(n);
 
-    cin_vector(v);
-
-    sort( v.begin(), v.end() );
-    
-    while (next_permutation(v.begin(), v.end()))
+    for (int i = 0; i < all_row; ++i)
     {
+        int j = i;
 
-        out_vector(v);
+        vector<int> out;
+
+
+        while (j)
+        {
+            out.push_back( j % 2);
+            j /= 2;
+        }
+
+        for (j = 0; j < n - out.size() - 1; ++j) cout << "0";
+
+        out_vector(out);
+
+        cout << "\n";
+
     }
 
+    //vector<int> v(n);
 
+    //v.resize(n);
 
+    //cin_vector(v);
 
+    //sort( v.begin(), v.end() );
+    //
+    //while (next_permutation(v.begin(), v.end()))
+    //{
 
-   
-
-
-
-
-
-
-
-
+    //    out_vector(v);
+    //}
 
 
     return 0;
