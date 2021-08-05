@@ -10,38 +10,65 @@ bool cmp(int l, int r)
     return l > r;
 }
 
+int sum_dig(int a)
+{
+    int ret = 0;
+
+    while (a)
+    {
+        ret += a % 10;
+        a /= 10;
+    }
+
+    return ret;
+}
+
+
+
 int main()
 {
 
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
-    // O( n^2 )
-    
-    // / *
-    // + -
-    // ++ -- << >>
 
-    int n;
+    int n, m, a;
 
     cin >> n;
-    vector<int> v(n);
 
-    for (int i = 0; i < n; ++i)
+    cin >> a;
+
+    //vector<int> v;
+    //      ---------->
+    //v = (1, 2, 3, 4, 2);
+
+
+
+    vector< vector<char> > vv(n , vector<char>(n) );
+
+
+    for (int y = 0; y < n; ++y)
     {
-        cin >> v[i];
+        cin >> a;
+        for (int x = 0; x < n; ++x)
+        {
+            cin >> vv[y][x];
+
+        }
     }
 
-    std::sort( v.begin(), v.end() ); 
-    
-    for (int i = 0; i < n; ++i)
+    int h = n, w = n;
+
+    for (int y = 0; y < h; ++y)
     {
-        cout << v[i] << " ";
+        for (int x = y + 1; x < w; ++x)
+        {
+            if (vv[y][x] == '1')
+                cout << y+1 << " " << x+1 << "\n";
+
+        }
     }
 
-
-
-    
 
 
 
