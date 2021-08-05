@@ -4,6 +4,10 @@
 
 using namespace std;
 
+typedef std::vector<int> VI;
+typedef std::vector<vector<int>> VVI;
+
+
 // <
 bool cmp(int l, int r)
 {
@@ -24,6 +28,58 @@ int sum_dig(int a)
 }
 
 
+VI v;
+
+void rect(int step, int step_finish)
+{
+    if (step == step_finish)
+    {
+        for (int i = 0; i < v.size(); ++i)
+        {
+            cout << v[i];
+        }
+
+        cout << "\n";
+        return;
+    }
+
+
+    v[step] = 0;
+    rect(step + 1, step_finish);
+
+    v[step] = 1;
+    rect(step + 1, step_finish);
+
+    v[step] = 2;
+    rect(step + 1, step_finish);
+
+
+    return;
+}
+
+
+void inline cin_vector(vector<int>& v)
+{
+    for (int i = 0; i < v.size(); ++i)
+    {
+        //cin >> v[i];
+        scanf("%d", &(v[i]));
+    }
+}
+
+void inline out_vector(const vector<int>& v)
+{
+    for (int i = 0; i < v.size(); ++i)
+    {
+        //cout << v[i];
+
+        printf("%d ", v[i]);
+    }
+
+    printf("\n");
+}
+
+
 
 int main()
 {
@@ -31,43 +87,37 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    // O(!n)
+
+    // O(3^n)
+
 
     int n, m, a;
 
     cin >> n;
 
-    cin >> a;
+    vector<int> v(n);
 
-    //vector<int> v;
-    //      ---------->
-    //v = (1, 2, 3, 4, 2);
+    v.resize(n);
 
+    cin_vector(v);
 
-
-    vector< vector<char> > vv(n , vector<char>(n) );
-
-
-    for (int y = 0; y < n; ++y)
+    sort( v.begin(), v.end() );
+    
+    while (next_permutation(v.begin(), v.end()))
     {
-        cin >> a;
-        for (int x = 0; x < n; ++x)
-        {
-            cin >> vv[y][x];
 
-        }
+        out_vector(v);
     }
 
-    int h = n, w = n;
 
-    for (int y = 0; y < h; ++y)
-    {
-        for (int x = y + 1; x < w; ++x)
-        {
-            if (vv[y][x] == '1')
-                cout << y+1 << " " << x+1 << "\n";
 
-        }
-    }
+
+
+   
 
 
 
