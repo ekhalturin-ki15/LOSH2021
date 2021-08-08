@@ -36,6 +36,7 @@ bool operator<(Point l, Point r)
 }
 
 
+
 class All_Point
 {
 private:
@@ -80,6 +81,13 @@ All_Point::All_Point()
 	cout.open("output.txt");
 }
 
+ std::ifstream& operator>>(std::ifstream& in, Point& p)
+{
+	char ch;
+	in >> p.x >> ch >> p.y;
+	return in;
+}
+
 void All_Point::input_point()
 {
 	int n;
@@ -94,10 +102,10 @@ void All_Point::input_point()
 	//for (auto it : vp)
 	for (int i = 0; i < vp.size(); ++i)
 	{
-		//cin >> vp[i];
+		cin >> vp[i];
 		//scanf("%d,%d", &vp[i].x, &vp[i].y);
 
-		cin >> vp[i].x >> ch >> vp[i].y;
+		//cin >> vp[i].x >> ch >> vp[i].y;
 	}
 
 
@@ -116,5 +124,6 @@ void All_Point::sorting()
 	//sort(vp.begin(), vp.end());
 
 	//sort(vp.begin(), vp.end(), cmp);
+
 
 }
