@@ -3,72 +3,88 @@
 #include <vector>
 #include <algorithm>
 #include <deque>
-// #include "bits/stdc++.h
 
+#include <cstdio>
+
+// #include "bits/stdc++.h
 
 using namespace std;
 
 
-//int main(int argn, vector<vector<char>> argv)
 
-//type name(type_first_param name_first_param, , , )
-
-int FIVE(int a, int b)
+class Point
 {
-	return 4;
-}
+public:
 
-int FIVE(double a)
-{
-	return 3;
-}
+	int x;
 
+	int y;
 
-int FIVE(int a)
-{
-	return 2;
-}
-
-
-int FIVE()
-{
-	return 1;
-}
-
-
-struct Name1
-{
-	int r;
 };
 
-struct Name2
+class All_Point
 {
-
-public:
-	int a;
-	int b;
-	int e;
-
-	vector<int> v;
-
-	Name1 w;
-
 private:
 
-protected:
+	ifstream cin;
+	ofstream cout;
+
+public:
+
+	All_Point();
+
+	vector<Point> vp;
+
+	void input_point();
+
 };
+
+
 
 
 int main(int argn, char** argv)
 {
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
 
-	Name2 a;
 
-	cin >> a.e;
+	All_Point ap;
 
-	cin >> a.w.r;
+	ap.input_point();
 
-	vector<Name2> vv(50);
+
+}
+
+All_Point::All_Point()
+{
+	cin.open("input.txt");
+	cout.open("output.txt");
+}
+
+void All_Point::input_point()
+{
+	int n;
+
+	//cin >> n;
+	scanf("%d", &n);
+
+	char ch;
+
+	(*this).vp.resize(n);
+
+	//for (auto it : vp)
+	for (int i = 0; i < vp.size(); ++i)
+	{
+		//cin >> vp[i];
+		//scanf("%d,%d", &vp[i].x, &vp[i].y);
+
+		cin >> vp[i].x >> ch >> vp[i].y;
+	}
+
+
+	//this->vp.resize(n);
+
+
 
 
 }
