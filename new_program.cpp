@@ -165,6 +165,16 @@ bool DFS(int x_now, int y_now, int fx, int fy, const vector< vector< VPI  > >& a
 
 
 
+int fib(int k)
+{
+    if (k <= 1) return 1;
+
+    return fib(k - 1) + fib(k - 2);
+
+}
+
+
+
 int main()
 {
 
@@ -174,124 +184,13 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int w, h, x, y;
-    cin >> w >> h;
 
-    vector <vector<char>> vv(h);
-    vector< vector< VPI  > >  adjacent(h);
+    // 
+    int n;
+    cin >> n;
 
+    cout<<fib(n);
 
-    //pair <int, int> start_ceil;
-    int start_ceil_x;
-    int start_ceil_y;
-
-    int finish_ceil_x;
-    int finish_ceil_y;
-
-    for (y = 0; y < h; ++y)
-    {
-        vv[y].resize(w);
-
-        adjacent[y].resize(w);
-
-        FOR(x, w)
-        {
-            cin >> vv[y][x];
-
-            if (vv[y][x] == 'F')
-            {
-                start_ceil_x = x;
-                start_ceil_y = y;
-            }
-
-
-            if (vv[y][x] == 'S')
-            {
-                finish_ceil_x = x;
-                finish_ceil_y = y;
-            }
-
-
-
-        }
-    }
-
-    const int amount_dir = 4;
-    vector<int> dir_x = { 0,1,0,-1 };
-    vector<int> dir_y = { 1,0,-1, 0 };
-
-
-
-
-    //tuple <int ,int ,int>
-
-
-    int x_new, y_new;
-
-
-
-
-    FOR(y, h)
-    {
-        FOR(x, w)
-        {
-            for (int i = 0; i < amount_dir; ++i)
-            {
-                x_new = x + dir_x[i];
-                y_new = y + dir_y[i];
-
-
-                if (is_ok(x_new, y_new, x, y, w, h, vv))
-                {
-
-                    //pair<int, int> pr(x_new, y_new);
-                    adjacent[y][x].push_back({ x_new, y_new });
-
-                }
-
-
-            }
-
-
-
-        }
-    }
-
-
-    VVB ceils(h, vector<char>(w));
-
-
-    DFS(start_ceil_x, start_ceil_y, finish_ceil_x, finish_ceil_y, adjacent, ceils);
-
-
-    for (int i = 0; i < out_list.size(); ++i)
-    {
-        //auto [x, y] = out_list[i];
-        int x = out_list[i].first;
-        int y = out_list[i].second;
-
-        ceils[y][x] = 2;
-
-        //cout << out_list[i].first << " " << out_list[i].second << endl;
-    }
-
-
-    for (y = 0; y < h; ++y)
-    {
-        FOR(x, w)
-        {
-            if (ceils[y][x] == 2)
-            {
-                cout << '*';
-            }
-            else
-                cout << vv[y][x];
-
-
-        }
-
-        cout << "\n";
-    }
 
 
 
