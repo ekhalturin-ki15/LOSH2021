@@ -10,34 +10,44 @@ using namespace std;
 
 
 //int main(int argn, vector<vector<char>> argv)
+
+//type name(type_first_param name_first_param, , , )
+
+int FIVE(int a, int b)
+{
+	return 4;
+}
+
+int FIVE(double a)
+{
+	return 3;
+}
+
+
+int FIVE(int a)
+{
+	return 2;
+}
+
+
+int FIVE()
+{
+	return 1;
+}
+
 int main(int argn, char** argv)
 {
-
-
-
-	//argn = 6;
-	// 
-	// 
-	// argv[2][1] == '5'
-	// "prog.exe"
-	// "-g"
-	// "-5"
-	// 
-	// 
-	//freopen_s("input.txt", "r", stdin);
-	//freopen("output.txt", "w", stdout);
+	int a; int b;
 
 
 	ifstream in("input.txt");
 	ofstream out("output.txt");
 
 
-	std::vector<int> a = { 0, 4, 6, 50 };
-	std::vector<int> b = { -23, 4, 4, 5, 6, 50, 60 };
+	vector<int> v;
+	v.resize(7);
 
-
-
-
+	out << FIVE(1);
 
 
 }
