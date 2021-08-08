@@ -3,8 +3,8 @@
 #include <vector>
 #include <algorithm>
 #include <deque>
-
 #include <cstdio>
+#include <functional>
 
 // #include "bits/stdc++.h
 
@@ -22,6 +22,20 @@ public:
 
 };
 
+
+bool cmp(Point l, Point r, function<bool(int, int)> less)
+{
+	if (l.x != r.x) return less(l.x,r.x);
+	return less(l.y, r.y);
+}
+
+bool operator<(Point l, Point r)
+{
+	if (l.x != r.x) return (l.x > r.x);
+	return (l.y > r.y);
+}
+
+
 class All_Point
 {
 private:
@@ -37,7 +51,11 @@ public:
 
 	void input_point();
 
+	void sorting();
+
 };
+
+
 
 
 
@@ -52,6 +70,7 @@ int main(int argn, char** argv)
 
 	ap.input_point();
 
+	ap.sorting();
 
 }
 
@@ -65,8 +84,8 @@ void All_Point::input_point()
 {
 	int n;
 
-	//cin >> n;
-	scanf("%d", &n);
+	cin >> n;
+	//scanf("%d", &n);
 
 	char ch;
 
@@ -86,5 +105,16 @@ void All_Point::input_point()
 
 
 
+
+}
+
+void All_Point::sorting()
+{
+
+	//sort(vp.begin(), vp.end(), cmp);
+
+	//sort(vp.begin(), vp.end());
+
+	//sort(vp.begin(), vp.end(), cmp);
 
 }
