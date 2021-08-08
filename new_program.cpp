@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <functional>
 
+#pragma comment(linker, "/STACK:26777216")
 // #include "bits/stdc++.h
 
 using namespace std;
@@ -58,6 +59,38 @@ public:
 
 
 
+void q_sort(int start, int finish, vector<int>& v)
+{
+
+	if (start >= finish) return;
+
+	int key = v[(finish - start)/2 + start];
+
+
+	int iterator_left = start;
+	int iterator_right = finish;
+	while (iterator_left < iterator_right)
+	{
+		while (v[iterator_left] < key) 
+			++iterator_left;
+
+		while (v[iterator_right] > key) 
+			--iterator_right;
+
+
+		if (iterator_left <= iterator_right)
+		{
+			swap(v[iterator_left], v[iterator_right]);
+			++iterator_left; --iterator_right;
+		}
+	}
+
+
+	q_sort(start, iterator_right , v);
+	q_sort(iterator_left, finish, v);
+
+}
+
 
 
 
@@ -66,12 +99,22 @@ int main(int argn, char** argv)
 	//freopen("input.txt", "r", stdin);
 	//freopen("output.txt", "w", stdout);
 
+	ifstream cin("input.txt");
+	ofstream cout("output.txt");
 
-	All_Point ap;
 
-	ap.input_point();
+	//All_Point ap;
 
-	ap.sorting();
+	//ap.input_point();
+
+	//ap.sorting();
+	
+
+	char ch;
+	if (ch == ';')
+	{
+		
+	}
 
 }
 
