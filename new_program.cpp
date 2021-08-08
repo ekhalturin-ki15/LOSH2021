@@ -35,19 +35,40 @@ int FIVE()
 	return 1;
 }
 
-int main(int argn, char** argv)
+
+struct Name1
 {
-	int a; int b;
+	int r;
+};
 
+struct Name2
+{
 
-	ifstream in("input.txt");
-	ofstream out("output.txt");
-
+public:
+	int a;
+	int b;
+	int e;
 
 	vector<int> v;
-	v.resize(7);
 
-	out << FIVE(1);
+	Name1 w;
+
+private:
+
+protected:
+};
+
+
+int main(int argn, char** argv)
+{
+
+	Name2 a;
+
+	cin >> a.e;
+
+	cin >> a.w.r;
+
+	vector<Name2> vv(50);
 
 
 }
