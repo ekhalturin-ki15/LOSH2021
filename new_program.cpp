@@ -61,11 +61,42 @@ int main(int argn, char** argv)
 	//	cout << it << " ";
 	//}
 
-	long long a, b;
+	//list<long long> l;
 
-	cin >> a >> b;
 
-	cout << a + b;
+	// - 44 - [4]
+	const int delete_index = 4;
+
+	//vector<int> v = { 1,2,3,4,5,6,7,8};
+
+	vector<int> v = { 10,21,254,36,44,53,68,72,81,39 };
+
+	for (int i = delete_index; i < v.size() - 1; ++i)
+	{
+		v[i] = v[i + 1];
+	} // erase O(n) pop_back O(1)
+
+	//erase all position O(1)
+	v.pop_back();
+
+	//swap pop_back
+
+
+	//vector<int> pref, post;
+
+	//for (int i = 0; i < delete_index; ++i) pref.push_back(v[i]);
+
+	//for (int i = delete_index+1; i < v.size(); ++i) post.push_back(v[i]);
+
+	//
+
+	//vector<int> q;
+	//merge(pref.begin(), pref.end(), post.begin(), post.end(), std::back_inserter(q));
+
+
+
+	
+
 
 	/*
 	O(1) n - любое (n = 10^18)
