@@ -7,6 +7,7 @@
 #include <functional>
 #include <list>
 #include <stack>
+#include <queue>
 
 #pragma comment(linker, "/STACK:26777216")
 // #include "bits/stdc++.h
@@ -24,31 +25,76 @@ int main(int argn, char** argv)
 	freopen("output.txt", "w", stdout);
 #endif
 
-	std::stack<int> st;
+	//std::stack<int> st;
 
-	for (int i = 0; i < 100; i++)
-	{
-		st.push(i);
+	//std::queue< int > qt;
 
-		if (i % 3 == 0)
-		{
-			st.pop();
-		}
-	}
+	//std::vector< int > v; //[i] iterator begin end
+
+	//std::string s; //[i] iterator begin end + 
+
+	//std::deque< int > dq; //[i] iterator begin end push_back push_front
 
 
-	while (st.size())
-	{
-		cout << st.top()<<" ";
-		st.pop();
-	}
+	//for (int i = 0; i < 100; ++i)
+	//{
+	//	if (i % 2 == 0)
+	//	{
+	//		dq.push_front(i);
+	//	}
+	//	else
+	//	{
+	//		dq.push_back(i);
+
+	//		dq.front();
+	//		dq.back();
+	//	}
+
+	//}
 
 
+	////for (auto it : dq) cout << it <<" ";
 
+	//for (int i = 0; i < dq.size(); ++i)
+	//{
+	//	int& it = dq[i];
+	//	cout << it << " ";
+	//}
+
+	long long a, b;
+
+	cin >> a >> b;
+
+	cout << a + b;
+
+	/*
+	O(1)
+
+	O(log n)
+	
+	O( sqrt n)
+
+	O( n )
+
+	O( n * log n)
+	
+	O( n^2 )
+
+	O( n^3 )
+
+	O ( 2 ^ n )
+
+	O ( !n )
+
+	----------------
+	O ( n ^ n ) 
+
+
+	*/
 	
 
 
-	
+
 }
 
 
