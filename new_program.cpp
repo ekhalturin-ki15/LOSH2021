@@ -18,6 +18,34 @@ using namespace std;
 
 
 
+const int amount_rect = 10;
+
+
+int v[amount_rect];
+
+void my_func(int step)
+{
+	cout << "*  Мы зашли в функцию на шаге = " << step << "\n";
+
+	if (step >= amount_rect)
+	{
+		cout << char(14)<<" Мы закончили рекурсию на шаге = " << step << "\n";
+		return;
+	}
+
+	v[step] = 0;
+	my_func(step + 1);
+
+
+	cout << "#  Мы продолжили выполнение функции на шаге = " << step << "\n";
+	v[step] = 1;
+	my_func(step + 1);
+
+
+
+	cout << char(20) <<" Мы вышли из функцию на шаге = " << step << "\n";
+}
+
 
 int main(int argn, char** argv)
 {
@@ -26,6 +54,14 @@ int main(int argn, char** argv)
 	freopen("output.txt", "w", stdout);
 #endif
 
+	my_func(0);
+
+
+
+
+
+
+#ifdef ANOTHER
 
 	list <int> l; // insert объект создан
 	 // emplace объект отсутствует
@@ -74,7 +110,7 @@ int main(int argn, char** argv)
 	for (auto it : l) cout << it << " ";
 	cout << "\n";
 
-
+#endif
 
 
 
