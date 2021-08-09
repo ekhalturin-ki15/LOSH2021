@@ -9,6 +9,8 @@
 #include <stack>
 #include <queue>
 
+#include <set>
+
 #include <iterator>
 
 #pragma comment(linker, "/STACK:26777216")
@@ -47,6 +49,18 @@ void my_func(int step)
 }
 
 
+struct my_vect
+{
+
+};
+
+
+template <typename T>
+T my_less(T l, T r)
+{
+	return l < r;
+}
+
 int main(int argn, char** argv)
 {
 #ifdef TEST
@@ -54,7 +68,69 @@ int main(int argn, char** argv)
 	freopen("output.txt", "w", stdout);
 #endif
 
-	my_func(0);
+	//my_func(0);
+
+
+	list<int> l = {9, 1, 2, 3, 4, 5};
+
+	list<int>::iterator it = l.begin();
+
+	l.insert(it, 100);
+
+	//for (auto it : l) cout << it << " ";
+	//cout << "\n";
+
+	//Красно-черное дерево 
+	set<int, std::greater<int> > s;
+	
+	
+	//
+
+	s.insert(5);
+
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
+
+	s.insert(1);
+
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
+
+	s.insert(3);
+
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
+
+	s.insert(2);
+	s.insert(2);
+	s.insert(2);
+	s.insert(2);
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
+
+	s.insert(4);
+
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
+
+	if (s.count(1))
+	{
+		cout << "doing\n";
+	}
+	cout<< s.count(2) <<"\n";
+
+
+	set<int>::iterator et = s.find(2);
+	s.erase(et, next(et,2));
+	s.insert(s.begin(), 10);
+
+	cout << s.count(2) << "\n";
+
+
+	
+
+	for (auto it : s) cout << it << " ";
+	cout << "\n";
 
 
 
