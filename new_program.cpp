@@ -6,49 +6,13 @@
 #include <cstdio>
 #include <functional>
 #include <list>
+#include <stack>
 
 #pragma comment(linker, "/STACK:26777216")
 // #include "bits/stdc++.h
 
 using namespace std;
 
-
-struct A
-{
-	int a = 1;
-	int b = 2;
-	int c = 3;
-
-
-
-	int size()
-	{
-		return a + b + c;
-	}
-
-};
-
-struct B
-{
-	int a = 1;
-	int b = 2;
-	int c = 3;
-
-
-
-	string size()
-	{
-		return "string";
-	}
-
-};
-
-
-
-auto func(auto a)
-{
-	return a.size();
-}
 
 
 
@@ -60,6 +24,28 @@ int main(int argn, char** argv)
 	freopen("output.txt", "w", stdout);
 #endif
 
+	std::stack<int> st;
+
+	for (int i = 0; i < 100; i++)
+	{
+		st.push(i);
+
+		if (i % 3 == 0)
+		{
+			st.pop();
+		}
+	}
+
+
+	while (st.size())
+	{
+		cout << st.top()<<" ";
+		st.pop();
+	}
+
+
+
+	
 
 
 	
