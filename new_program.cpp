@@ -68,26 +68,26 @@ int main(int argn, char** argv)
 	cout << a + b;
 
 	/*
-	O(1)
+	O(1) n - любое (n = 10^18)
 
-	O(log n)
+	O(log n) n - любое (n = 10^18)
 	
-	O( sqrt n)
+	O( sqrt n)  n - любое (n = 10^12)
 
-	O( n )
+	O( n ) n - любое (n = 10^6)
 
-	O( n * log n)
+	O( n * log n) n - любое (n = 10^5) std::sort
 	
-	O( n^2 )
+	O( n^2 )	(n = 10^3)
 
-	O( n^3 )
+	O( n^3 ) (n = 10^2)
 
-	O ( 2 ^ n )
+	O ( 2 ^ n ) (n = 20)
 
-	O ( !n )
+	O ( !n ) (n = 9)
 
 	----------------
-	O ( n ^ n ) 
+	O ( n ^ n ) (n = 7)
 
 
 	*/
